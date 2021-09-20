@@ -1,5 +1,8 @@
 <?php
 
+use App\Http\Controllers\ {
+    ClientController
+};
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -12,6 +15,10 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+
+Route::post('/clients',[ClientController::class, 'store'])->name('clients.store');
+Route::get('/clients/create', [ClientController::class, 'create'])->name('clients.create');
+Route::get('/clients', [ClientController::class, 'index'])->name('clients.index');
 
 Route::get('/', function () {
     return view('welcome');
